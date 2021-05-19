@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/src.cpp
+iostream
+-
+fstream
+-
+vector
+-
+windows.h
+-
+
