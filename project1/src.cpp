@@ -2,7 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <windows.h>
-
+#include <CodeParser.h>
 
 int main(int argc, char** argv){
 
@@ -38,49 +38,31 @@ int main(int argc, char** argv){
 
     std::string temp;
 
+    CodeParser codeParser;
+
     // filter line of code
     while (getline(inputFile, temp))
     {
-        // cuts off the comments
-        temp = temp.substr(0, temp.find("//",0));
+        codeParser = temp;
 
-        // remove double spaces, repeat until there are no longer double spaces
-        std::size_t doubleSpace = temp.find("  ");
-
-        while (doubleSpace != std::string::npos)
-        {
-            temp.erase(doubleSpace, 1);
-            doubleSpace = temp.find("  ");
-        }
-
-        if(temp.length()<2){
-            continue;
-        }
-
-        // place holder for code
-        std::vector<std::string> code;
-
-        outputFile << "//" << temp << "\n";
-
+        // int k = 1;
+        // for(auto &lineOfCode: code){
+        //     SetConsoleTextAttribute(hConsole, k);
+        //     std::cout << lineOfCode << " ";
+        //     k++;
+        // }
         
+        if(codeParser.getCommand() == "")
+            continue;
 
-        while (temp.length()>=1)
-        {
-            std::size_t delimiter = temp.find(" ");
+        outputFile << "// " << codeParser.getCommand() << " " << codeParser.getStack() << " " << codeParser.getArgument() << "\r\n";
 
-            if(delimiter == std::string::npos)
-                delimiter = temp.length();
-
-            code.push_back(temp.substr(0, delimiter));
-            temp.erase(0, delimiter+1);
-        }
-
-        int k = 1;
-        for(auto &lineOfCode: code){
-            SetConsoleTextAttribute(hConsole, k);
-            std::cout << lineOfCode << " ";
-            k++;
-        }
+        SetConsoleTextAttribute(hConsole, 1);
+        std::cout << codeParser.getCommand() << " ";
+        SetConsoleTextAttribute(hConsole, 2);
+        std::cout << codeParser.getStack() << " ";
+        SetConsoleTextAttribute(hConsole, 3);
+        std::cout << codeParser.getArgument() << " ";        
         std::cout << "\r\n";
         
 
