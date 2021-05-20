@@ -1,8 +1,5 @@
 #include <iostream>
-#include <fstream>
 #include <vector>
-#include <windows.h>
-
 
 
 class CodeParser

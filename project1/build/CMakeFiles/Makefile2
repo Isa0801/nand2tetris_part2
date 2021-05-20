@@ -69,6 +69,7 @@ CMAKE_BINARY_DIR = C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/VMELibs.dir/all
 all: CMakeFiles/VMTranslator.dir/all
 
 .PHONY : all
@@ -79,23 +80,51 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/VMELibs.dir/clean
 clean: CMakeFiles/VMTranslator.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/VMELibs.dir
+
+# All Build rule for target.
+CMakeFiles/VMELibs.dir/all:
+	$(MAKE) -f CMakeFiles\VMELibs.dir\build.make CMakeFiles/VMELibs.dir/depend
+	$(MAKE) -f CMakeFiles\VMELibs.dir\build.make CMakeFiles/VMELibs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1\build\CMakeFiles --progress-num=1,2,3 "Built target VMELibs"
+.PHONY : CMakeFiles/VMELibs.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/VMELibs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1\build\CMakeFiles 3
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/VMELibs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1\build\CMakeFiles 0
+.PHONY : CMakeFiles/VMELibs.dir/rule
+
+# Convenience name for target.
+VMELibs: CMakeFiles/VMELibs.dir/rule
+
+.PHONY : VMELibs
+
+# clean rule for target.
+CMakeFiles/VMELibs.dir/clean:
+	$(MAKE) -f CMakeFiles\VMELibs.dir\build.make CMakeFiles/VMELibs.dir/clean
+.PHONY : CMakeFiles/VMELibs.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/VMTranslator.dir
 
 # All Build rule for target.
-CMakeFiles/VMTranslator.dir/all:
+CMakeFiles/VMTranslator.dir/all: CMakeFiles/VMELibs.dir/all
 	$(MAKE) -f CMakeFiles\VMTranslator.dir\build.make CMakeFiles/VMTranslator.dir/depend
 	$(MAKE) -f CMakeFiles\VMTranslator.dir\build.make CMakeFiles/VMTranslator.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1\build\CMakeFiles --progress-num=1,2 "Built target VMTranslator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1\build\CMakeFiles --progress-num=4,5 "Built target VMTranslator"
 .PHONY : CMakeFiles/VMTranslator.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/VMTranslator.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1\build\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1\build\CMakeFiles 5
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/VMTranslator.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1\build\CMakeFiles 0
 .PHONY : CMakeFiles/VMTranslator.dir/rule

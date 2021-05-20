@@ -3,6 +3,13 @@
 #include <vector>
 #include <windows.h>
 #include <CodeParser.h>
+#include <CodeTranslator.h>
+
+// operator overlord
+std::string operator<<(CodeParser& cp, std::string input){
+    cp = input;
+    return (cp.getCommand() + " " +  cp.getStack() + " " + cp.getArgument() + " ");
+}
 
 int main(int argc, char** argv){
 
@@ -39,11 +46,12 @@ int main(int argc, char** argv){
     std::string temp;
 
     CodeParser codeParser;
+    CodeTranslator codeTrans;
 
     // filter line of code
     while (getline(inputFile, temp))
     {
-        codeParser = temp;
+        codeParser << temp;
 
         // int k = 1;
         // for(auto &lineOfCode: code){
@@ -55,7 +63,11 @@ int main(int argc, char** argv){
         if(codeParser.getCommand() == "")
             continue;
 
-        outputFile << "// " << codeParser.getCommand() << " " << codeParser.getStack() << " " << codeParser.getArgument() << "\r\n";
+        outputFile << "// " << codeParser.getCommand() << " " << codeParser.getStack() << " " << codeParser.getArgument() << "\n";
+
+        if(codeParser.getStack() == ""){
+            outputFile << codeTrans.commandTrans(codeParser.getCommand());
+        }
 
         SetConsoleTextAttribute(hConsole, 1);
         std::cout << codeParser.getCommand() << " ";
@@ -63,7 +75,7 @@ int main(int argc, char** argv){
         std::cout << codeParser.getStack() << " ";
         SetConsoleTextAttribute(hConsole, 3);
         std::cout << codeParser.getArgument() << " ";        
-        std::cout << "\r\n";
+        std::cout << "\n";
         
 
 

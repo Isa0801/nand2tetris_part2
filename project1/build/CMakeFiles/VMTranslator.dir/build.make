@@ -74,6 +74,7 @@ include CMakeFiles/VMTranslator.dir/progress.make
 include CMakeFiles/VMTranslator.dir/flags.make
 
 CMakeFiles/VMTranslator.dir/src.cpp.obj: CMakeFiles/VMTranslator.dir/flags.make
+CMakeFiles/VMTranslator.dir/src.cpp.obj: CMakeFiles/VMTranslator.dir/includes_CXX.rsp
 CMakeFiles/VMTranslator.dir/src.cpp.obj: ../src.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VMTranslator.dir/src.cpp.obj"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VMTranslator.dir\src.cpp.obj -c C:\Users\warri\Desktop\nand2tetris\nand2tetris_part2\project1\src.cpp
@@ -95,6 +96,7 @@ VMTranslator_EXTERNAL_OBJECTS =
 
 VMTranslator.exe: CMakeFiles/VMTranslator.dir/src.cpp.obj
 VMTranslator.exe: CMakeFiles/VMTranslator.dir/build.make
+VMTranslator.exe: libVMELibs.a
 VMTranslator.exe: CMakeFiles/VMTranslator.dir/linklibs.rsp
 VMTranslator.exe: CMakeFiles/VMTranslator.dir/objects1.rsp
 VMTranslator.exe: CMakeFiles/VMTranslator.dir/link.txt

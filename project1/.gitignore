@@ -2,7 +2,7 @@
 *.d
 
 # dir
-/build
+build/
 
 # vs
 .vscode

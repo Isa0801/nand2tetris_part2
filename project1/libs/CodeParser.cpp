@@ -67,7 +67,6 @@ void CodeParser::setToLocalVars(std::vector<std::string> splitCode){
     
 }
 
-
 void CodeParser::operator=(std::string lineOfCode){
     this->lineOfCode = lineOfCode;
 

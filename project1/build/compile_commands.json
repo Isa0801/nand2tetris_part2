@@ -1,7 +1,17 @@
 [
 {
   "directory": "C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/build",
-  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE    -g   -o CMakeFiles\\VMTranslator.dir\\src.cpp.obj -c C:\\Users\\warri\\Desktop\\nand2tetris\\nand2tetris_part2\\project1\\src.cpp",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE   @CMakeFiles/VMELibs.dir/includes_CXX.rsp -g   -o CMakeFiles\\VMELibs.dir\\libs\\CodeParser.cpp.obj -c C:\\Users\\warri\\Desktop\\nand2tetris\\nand2tetris_part2\\project1\\libs\\CodeParser.cpp",
+  "file": "C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/libs/CodeParser.cpp"
+},
+{
+  "directory": "C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE   @CMakeFiles/VMELibs.dir/includes_CXX.rsp -g   -o CMakeFiles\\VMELibs.dir\\libs\\CodeTranslator.cpp.obj -c C:\\Users\\warri\\Desktop\\nand2tetris\\nand2tetris_part2\\project1\\libs\\CodeTranslator.cpp",
+  "file": "C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/libs/CodeTranslator.cpp"
+},
+{
+  "directory": "C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/build",
+  "command": "C:\\PROGRA~1\\MINGW-~1\\X86_64~1.0-P\\mingw64\\bin\\X86_64~2.EXE   @CMakeFiles/VMTranslator.dir/includes_CXX.rsp -g   -o CMakeFiles\\VMTranslator.dir\\src.cpp.obj -c C:\\Users\\warri\\Desktop\\nand2tetris\\nand2tetris_part2\\project1\\src.cpp",
   "file": "C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/src.cpp"
 }
 ]

@@ -127,6 +127,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named VMELibs
+
+# Build rule for target.
+VMELibs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 VMELibs
+.PHONY : VMELibs
+
+# fast build rule for target.
+VMELibs/fast:
+	$(MAKE) -f CMakeFiles\VMELibs.dir\build.make CMakeFiles/VMELibs.dir/build
+.PHONY : VMELibs/fast
+
+#=============================================================================
 # Target rules for targets named VMTranslator
 
 # Build rule for target.
@@ -138,6 +151,60 @@ VMTranslator: cmake_check_build_system
 VMTranslator/fast:
 	$(MAKE) -f CMakeFiles\VMTranslator.dir\build.make CMakeFiles/VMTranslator.dir/build
 .PHONY : VMTranslator/fast
+
+libs/CodeParser.obj: libs/CodeParser.cpp.obj
+
+.PHONY : libs/CodeParser.obj
+
+# target to build an object file
+libs/CodeParser.cpp.obj:
+	$(MAKE) -f CMakeFiles\VMELibs.dir\build.make CMakeFiles/VMELibs.dir/libs/CodeParser.cpp.obj
+.PHONY : libs/CodeParser.cpp.obj
+
+libs/CodeParser.i: libs/CodeParser.cpp.i
+
+.PHONY : libs/CodeParser.i
+
+# target to preprocess a source file
+libs/CodeParser.cpp.i:
+	$(MAKE) -f CMakeFiles\VMELibs.dir\build.make CMakeFiles/VMELibs.dir/libs/CodeParser.cpp.i
+.PHONY : libs/CodeParser.cpp.i
+
+libs/CodeParser.s: libs/CodeParser.cpp.s
+
+.PHONY : libs/CodeParser.s
+
+# target to generate assembly for a file
+libs/CodeParser.cpp.s:
+	$(MAKE) -f CMakeFiles\VMELibs.dir\build.make CMakeFiles/VMELibs.dir/libs/CodeParser.cpp.s
+.PHONY : libs/CodeParser.cpp.s
+
+libs/CodeTranslator.obj: libs/CodeTranslator.cpp.obj
+
+.PHONY : libs/CodeTranslator.obj
+
+# target to build an object file
+libs/CodeTranslator.cpp.obj:
+	$(MAKE) -f CMakeFiles\VMELibs.dir\build.make CMakeFiles/VMELibs.dir/libs/CodeTranslator.cpp.obj
+.PHONY : libs/CodeTranslator.cpp.obj
+
+libs/CodeTranslator.i: libs/CodeTranslator.cpp.i
+
+.PHONY : libs/CodeTranslator.i
+
+# target to preprocess a source file
+libs/CodeTranslator.cpp.i:
+	$(MAKE) -f CMakeFiles\VMELibs.dir\build.make CMakeFiles/VMELibs.dir/libs/CodeTranslator.cpp.i
+.PHONY : libs/CodeTranslator.cpp.i
+
+libs/CodeTranslator.s: libs/CodeTranslator.cpp.s
+
+.PHONY : libs/CodeTranslator.s
+
+# target to generate assembly for a file
+libs/CodeTranslator.cpp.s:
+	$(MAKE) -f CMakeFiles\VMELibs.dir\build.make CMakeFiles/VMELibs.dir/libs/CodeTranslator.cpp.s
+.PHONY : libs/CodeTranslator.cpp.s
 
 src.obj: src.cpp.obj
 
@@ -174,7 +241,14 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... VMELibs
 	@echo ... VMTranslator
+	@echo ... libs/CodeParser.obj
+	@echo ... libs/CodeParser.i
+	@echo ... libs/CodeParser.s
+	@echo ... libs/CodeTranslator.obj
+	@echo ... libs/CodeTranslator.i
+	@echo ... libs/CodeTranslator.s
 	@echo ... src.obj
 	@echo ... src.i
 	@echo ... src.s
