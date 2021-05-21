@@ -1,3 +1,0 @@
-C:\dev\cmake-3.17.0-win64-x64\bin\cmake.exe -E rm -f CMakeFiles\VMTranslator.dir/objects.a
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe cr CMakeFiles\VMTranslator.dir/objects.a @CMakeFiles\VMTranslator.dir\objects1.rsp
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\X86_64~2.EXE -g   -Wl,--whole-archive CMakeFiles\VMTranslator.dir/objects.a -Wl,--no-whole-archive  -o VMTranslator.exe -Wl,--out-implib,libVMTranslator.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\VMTranslator.dir\linklibs.rsp

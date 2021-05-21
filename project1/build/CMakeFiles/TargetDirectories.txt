@@ -1,4 +1,0 @@
-C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/build/CMakeFiles/VMELibs.dir
-C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/build/CMakeFiles/VMTranslator.dir
-C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/build/CMakeFiles/edit_cache.dir
-C:/Users/warri/Desktop/nand2tetris/nand2tetris_part2/project1/build/CMakeFiles/rebuild_cache.dir
