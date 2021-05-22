@@ -11,6 +11,19 @@ std::string operator<<(CodeParser& cp, std::string input){
     return (cp.getCommand() + " " +  cp.getStack() + " " + cp.getArgument() + " ");
 }
 
+// operator overlord
+void operator<<(CodeTranslator& ct, CodeParser& cp){
+    ct.setCommand(cp.getCommand());
+    ct.setStack(cp.getStack());
+    ct.setArg(cp.getArgument());
+}
+
+// operator overlord
+std::ostream & operator <<(std::ostream & out, CodeTranslator& ct){
+
+    return out << ct.getTranslatedCode();
+}
+
 int main(int argc, char** argv){
 
     // check if src file is given
@@ -46,12 +59,14 @@ int main(int argc, char** argv){
     std::string temp;
 
     CodeParser codeParser;
-    CodeTranslator codeTrans;
+    CodeTranslator codeTrans(srcFileName.substr(0,exetensionPos));
 
     // filter line of code
     while (getline(inputFile, temp))
     {
         codeParser << temp;
+
+        codeTrans << codeParser;
 
         // int k = 1;
         // for(auto &lineOfCode: code){
@@ -64,9 +79,9 @@ int main(int argc, char** argv){
             continue;
 
         outputFile << "// " << codeParser.getCommand() << " " << codeParser.getStack() << " " << codeParser.getArgument() << "\n";
-
-        if(codeParser.getStack() == ""){
-            outputFile << codeTrans.commandTrans(codeParser.getCommand());
+        
+        if(codeParser.getCommand() != ""){
+            outputFile << codeTrans;
         }
 
         SetConsoleTextAttribute(hConsole, 1);
