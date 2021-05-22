@@ -43,48 +43,12 @@ std::string CodeTranslator::commandTrans(){
         return res;
     }
 
-    if(command == "neq"){
-        // get address of the first data value and set it to d register, and move sp up
-        res += "@SP\n";
-        res += "M=M-1\n";
-        res += "A=M\n";
-        res += "D=M\n";
-
-        // get address of the seconde data value, subtract first data value and store it to d register
-        res += "A=A-1\n";
-        res += "D=M-D\n";
-        res += "@jmp"+std::to_string(jmpCount);
-        res += "\n";
-        res += "D;JNE\n";
-
-        // if v1 and 2 are equal
-        res += "@0\n";
-        res += "D=A\n";
-        res += "@end"+std::to_string(jmpCount);
-        res += "\n";
-        res += "0;JMP\n";
-        
-
-        // if v1 and v2 are not equal
-        res += "(jmp"+std::to_string(jmpCount);
-        res += ")\n";
-        res += "@1\n";
-        res += "D=A\n";
-        res += "@end"+std::to_string(jmpCount);
-        res += "\n";
-        res += "0;JMP\n";
-
-    
-
-        // end label
-        res += "(end"+std::to_string(jmpCount);
-        res += ")\n";
-
+    if(command == "neg"){
+        // turn to opposite
         res += "@SP\n";
         res += "A=M-1\n";
-        res += "M=D\n";    
-
-        jmpCount++;
+        res += "M=!M\n";
+        res += "M=M+1\n";
         return res;
     }
 
@@ -113,8 +77,9 @@ std::string CodeTranslator::commandTrans(){
         // if v1 and v2 are equal
         res += "(jmp"+std::to_string(jmpCount);
         res += ")\n";
-        res += "@1\n";
+        res += "@0\n";
         res += "D=A\n";
+        res += "D=!D\n";
         res += "@end"+std::to_string(jmpCount);
         res += "\n";
         res += "0;JMP\n";
@@ -133,7 +98,7 @@ std::string CodeTranslator::commandTrans(){
         return res;
     }
 
-    if(command == "get"){
+    if(command == "gt"){
         // get address of the first data value and set it to d register, and move sp up
         res += "@SP\n";
         res += "M=M-1\n";
@@ -158,8 +123,9 @@ std::string CodeTranslator::commandTrans(){
         // if v1 greater v2 
         res += "(jmp"+std::to_string(jmpCount);
         res += ")\n";
-        res += "@1\n";
+        res += "@0\n";
         res += "D=A\n";
+        res += "D=!D\n";
         res += "@end"+std::to_string(jmpCount);
         res += "\n";
         res += "0;JMP\n";
@@ -203,8 +169,9 @@ std::string CodeTranslator::commandTrans(){
         // if v1 less v2 
         res += "(jmp"+std::to_string(jmpCount);
         res += ")\n";
-        res += "@1\n";
+        res += "@0\n";
         res += "D=A\n";
+        res += "D=!D\n";
         res += "@end"+std::to_string(jmpCount);
         res += "\n";
         res += "0;JMP\n";
